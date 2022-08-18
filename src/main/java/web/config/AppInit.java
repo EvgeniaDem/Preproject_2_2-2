@@ -23,7 +23,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     /* Данный метод указывает url, на котором будет базироваться приложение */
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/"};            // значит, что все HTML запросы будут посылаться на Dispatcherservlet
+        return new String[]{"/"};            // значит, что ВСЕ HTML запросы будут посылаться на Dispatcherservlet
     }
 
 }
