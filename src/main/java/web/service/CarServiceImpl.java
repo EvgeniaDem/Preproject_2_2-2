@@ -26,6 +26,15 @@ public class CarServiceImpl implements CarService {
 
         return cars;
     }
+
+    @Override
+    public List<Car> getSeveralCars(int count) {
+        List<Car> allCars = getAllCars();
+        if (count >= allCars.size()) {
+            return allCars;
+        } else {
+            allCars.subList(count, allCars.size()).clear();
+            return allCars;
+        }
+    }
 }
-
-
