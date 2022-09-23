@@ -17,14 +17,7 @@ public class CarController {
     private CarService carService;
 
     @GetMapping("cars")
-    public String getAllCars(ModelMap modelMap) {
-        List<Car> cars = carService.getAllCars();
-        modelMap.addAttribute("cars", cars);
-        return "cars";
-    }
-
-    @GetMapping("/several-cars")
-    public String getSeveralCars(ModelMap modelMap, @RequestParam("count") int count) {
+    public String getAllCars(ModelMap modelMap, @RequestParam(name = "count", required = false) Integer count) {
         List<Car> cars = carService.getSeveralCars(count);
         modelMap.addAttribute("cars", cars);
         return "cars";

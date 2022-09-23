@@ -10,13 +10,14 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-	@GetMapping(value = "/")                   // то, что возвращает Controller, будет видеть пользователь
+	@GetMapping(value = "/")
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
 		messages.add("I'm Spring MVC application");
 		messages.add("5.2.0 version by sep'19 ");
 		model.addAttribute("messages", messages);
+		System.out.println("I am a Hello Controller");
 		return "index";
 	}
 	
